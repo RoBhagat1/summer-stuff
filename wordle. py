@@ -1,6 +1,8 @@
 import random
 
 
+#things that need fixing - multipe of same letter in word
+
 def repeated_letters(word):
     positions = {}
     for i, letter in enumerate(word):
