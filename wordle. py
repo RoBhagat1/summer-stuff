@@ -2,6 +2,7 @@ import random
 
 
 #things that need fixing - multipe of same letter in word
+#put in color
 
 def repeated_letters(word):
     positions = {}
@@ -13,7 +14,7 @@ def repeated_letters(word):
     return positions
 
 
-WORDS = ['vENOM', 'windy',	'donut', 'cower', 'enter', 'folly' ]
+WORDS = ['Venom', 'windy',	'donut', 'cower', 'enter', 'folly' , 'irate', 'audio', 'stole','flake']
 word_input = random.choice(WORDS).upper()
 
 
