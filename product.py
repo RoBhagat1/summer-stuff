@@ -32,7 +32,7 @@ def product(n, term):
 
 print(product(3,triple))
 print(product(3, increment))
-print(product(5, square))   
+print(product(5, square))
 print(product(3, square))
 print(product(5, identity))
 print(product(3, identity))
