@@ -1,7 +1,7 @@
 import nltk
 from textblob import TextBlob
 
-
+"""Code from ChatGPT for me to explore sentiment analysis"""
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
 
