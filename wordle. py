@@ -1,9 +1,7 @@
 import random
-
-
-#things that need fixing - multipe of same letter in word
 #put in color
 
+# Create a dictionary to store the positions of repeated letters in the word
 def repeated_letters(word):
     positions = {}
     for i, letter in enumerate(word):
@@ -13,43 +11,41 @@ def repeated_letters(word):
             positions[letter] = [i]
     return positions
 
-
-WORDS = ['Venom', 'windy',	'donut', 'cower', 'enter', 'folly' , 'irate', 'audio', 'stole','flake']
+WORDS = ['Venom', 'windy', 'donut', 'cower', 'enter', 'folly', 'irate', 'audio', 'stole', 'flake']
 word_input = random.choice(WORDS).upper()
-
 
 actualWord = "_____"
 actualWordList = list(actualWord)
 count = 0
-repeated_letters = repeated_letters(word_input)
+repeated_letters_dict = repeated_letters(word_input)
 
-
-while count<6:
+while count < 6:
     while True:
         guess = input("Enter a 5 letter word: ")
-        if(len(guess)==5):
+        if len(guess) == 5:
             break
         else:
             continue
-    guess_list = list(guess)
+
+    guess_list = list(guess.upper())
     word_list = list(word_input)
+
     for i in range(5):
-        if(guess_list[i].upper() == word_list[i].upper()):
-            actualWordList[i]=guess_list[i]
-        elif(guess_list[i].upper() in word_input.upper()):
-            if i in repeated_letters.get(guess_list[i].upper(), []):
+        if guess_list[i] == word_list[i]:
+            actualWordList[i] = guess_list[i]
+        elif guess_list[i] in word_input:
+            if i in repeated_letters_dict.get(guess_list[i], []):
                 print(guess_list[i] + " is in the word, and it occurs multiple times.")
             else:
                 print(guess_list[i] + " is in the word, but in a different spot")
+    
     actualWord = ''.join(actualWordList)
     print(actualWord)
-    if(guess.upper() == word_input.upper()):
-        print("Congrats! It took you "+ str(count)+" tries!")
+
+    if guess.upper() == word_input:
+        print("Congrats! It took you " + str(count) + " tries!")
         break
-    count+=1
+    count += 1
 
-if(count ==6):
+if count == 6:
     print("Ran out of tries. The word was " + word_input)
-    
-
-
