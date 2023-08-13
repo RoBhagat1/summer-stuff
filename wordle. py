@@ -41,7 +41,7 @@ while count < 6:
     
     actualWord = ''.join(actualWordList)
     print(actualWord)
-
+    
     if guess.upper() == word_input:
         print("Congrats! It took you " + str(count) + " tries!")
         break

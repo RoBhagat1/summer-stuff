@@ -1,20 +1,23 @@
 import nltk
 from textblob import TextBlob
 
-"""Code from ChatGPT for me to explore sentiment analysis"""
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
 
 def analyze_sentiment(text):
     blob = TextBlob(text)
     sentiment_score = blob.sentiment.polarity
-
-    if sentiment_score > 0:
+    print(sentiment_score)
+    if sentiment_score >= 0.5:
+        return "Very Positive"
+    elif sentiment_score <=0.2 and sentiment_score>=-0.2:
+        return "Neutral"
+    elif sentiment_score > 0:
         return "Positive"
-    elif sentiment_score < 0:
+    elif sentiment_score > -0.5:
         return "Negative"
     else:
-        return "Neutral"
+        return "Very Negative"
     
 
 if __name__ == "__main__":
